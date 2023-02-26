@@ -12,7 +12,7 @@
         android:theme="@style/Theme.BCASPAY"
         tools:targetApi="31">
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.home.HomeMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +21,8 @@
             </intent-filter>
         </activity>
 <!--        <activity android:name=".LoginActivity"/>-->
-        <activity android:name=".view.RegisterActivity"/>
-        <activity android:name=".view.BiodataActivity"/>
+        <activity android:name=".view.register.RegisterActivity"/>
+        <activity android:name=".view.biodata.BiodataActivity"/>
 
     </application>
 

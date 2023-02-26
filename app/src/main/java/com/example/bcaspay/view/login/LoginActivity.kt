@@ -1,10 +1,12 @@
-package com.example.bcaspay.view
+package com.example.bcaspay.view.login
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bcaspay.databinding.ActivityLoginBinding
+import com.example.bcaspay.view.register.RegisterActivity
+import com.example.bcaspay.view.biodata.BiodataActivity
 
 class LoginActivity:AppCompatActivity() {
     private lateinit var binding:ActivityLoginBinding
