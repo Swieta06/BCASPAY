@@ -19,6 +19,7 @@
 
         <ImageView
             android:id="@+id/iv_item_news"
+            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:src="@drawable/ic_launcher_background"
@@ -36,7 +37,18 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_item_news" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_item_news_icon"
+            android:scaleType="centerCrop"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
         <TextView
             android:id="@+id/tv_desc_card"
             android:layout_width="match_parent"
@@ -48,5 +60,6 @@
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_title_card" />
+    </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -14,6 +14,7 @@ class HomeMainAdapter(private val dataNews:List<NewsModel>
     ) {
         fun bindView(data:NewsModel) {
             binding.ivItemNews.setImageResource(data.image?:0)
+            binding.ivItemNewsIcon.setImageResource(data.icon?:0)
             binding.tvTitleCard.text=data.title
             binding.tvDescCard.text=data.subtitle
 
