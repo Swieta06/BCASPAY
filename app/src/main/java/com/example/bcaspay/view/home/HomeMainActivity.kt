@@ -5,15 +5,30 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.bcaspay.R
 import com.example.bcaspay.databinding.ActivityHomeBinding
 import com.example.bcaspay.model.NewsModel
+import com.example.bcaspay.view.detil.DetilNewsActivity
 
 class HomeMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val mainAdapter=HomeMainAdapter(populateData())
+//        val mainAadapter=HomeMainAdapter(
+//            dataNews = populateData(),
+//            onclickNews =  {
+//                DetilNewsActivity.navigateToActivityDetil(this,it)
+//
+//            })
+        val mainAdapter=HomeMainAdapter(
+            dataNews = populateData(),
+            onclickNews = {
+                DetilNewsActivity.navigateToActivityDetil(this,it)
+            }
+        )
         binding.rvNews.adapter=mainAdapter
+        binding.rvNews2.adapter=mainAdapter
+        binding.rvNews3.adapter=mainAdapter
     }
     private fun populateData():List<NewsModel>{
         val listData= listOf(
@@ -27,7 +42,7 @@ class HomeMainActivity : AppCompatActivity() {
             NewsModel(
                 image = R.drawable.bca2,
                 icon = R.drawable.bca2,
-                title = "Daftar Promo HUT BCA ke-66: Sushi Tei-Chatime Rp6 Ribu, Starbucks-Subway Diskon 66%",
+                title = "Daftar Promo HUT BCA ke-66: Sushi Tei-Chatime Rp6 Ribu",
                 subtitle = "Berikut daftar promo HUT BCA ke-66 yang diberikan untuk pembelian makanan, minuman, hingga transaksi e-commerce."
             ),
             NewsModel(

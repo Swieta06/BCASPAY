@@ -23,6 +23,7 @@
 <!--        <activity android:name=".LoginActivity"/>-->
         <activity android:name=".view.register.RegisterActivity"/>
         <activity android:name=".view.biodata.BiodataActivity"/>
+        <activity android:name=".view.detil.DetilNewsActivity"/>
 
     </application>
 
