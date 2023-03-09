@@ -10,6 +10,12 @@
     android:layout_height="match_parent"
     android:background="@color/primary"
     >
+    <include
+        android:id="@+id/componen_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/componen_app_bar"
+   />
 <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
@@ -19,10 +25,12 @@
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent"/>-->
     <TextView
+        android:id="@+id/txt_berita_terkini"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/secondary"
+        app:layout_constraintTop_toBottomOf="@id/componen_app_bar"
         android:padding="10dp"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -34,31 +42,54 @@
         android:id="@+id/rv_news"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="40dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_berita_terkini"
         tools:listitem="@layout/item_news" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_news2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rv_news2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
 
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+<!--        android:orientation="horizontal"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/rv_news"-->
+<!--        tools:listitem="@layout/item_news" />-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/rv_news3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+
+<!--        android:orientation="horizontal"-->
+<!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/rv_news2"-->
+<!--        tools:listitem="@layout/item_news" />-->
+    <TextView
+        android:id="@+id/txt_berita_terpopuler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/secondary"
         app:layout_constraintTop_toBottomOf="@+id/rv_news"
-        tools:listitem="@layout/item_news" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_news3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="Berita Terpopuler"
+        />
 
-        android:orientation="horizontal"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_news_latest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rv_news2"
-        tools:listitem="@layout/item_news" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_berita_terpopuler"
+        tools:listitem="@layout/item_news_lates" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

@@ -3,17 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <include
+        android:id="@+id/componen_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/componen_app_bar"
+        />
     <ImageView
         android:id="@+id/iv_detil_news"
         android:layout_width="match_parent"
         android:layout_height="220dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/componen_app_bar" />
 
     <TextView
+        android:textStyle="bold"
         android:id="@+id/tv_detil_title_news"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

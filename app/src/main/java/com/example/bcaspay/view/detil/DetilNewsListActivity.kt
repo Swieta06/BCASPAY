@@ -5,19 +5,17 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bcaspay.databinding.ActivityDetilNewsBinding
-import com.example.bcaspay.model.NewsModel
-
-class DetilNewsActivity:AppCompatActivity() {
+import com.example.bcaspay.model.ListModel
+class DetilNewsListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetilNewsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityDetilNewsBinding.inflate(layoutInflater)
+        binding = ActivityDetilNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setDatatViewDetil()
-
+        setDatatViewListDetil()
     }
-    private fun setDatatViewDetil(){
-        val data=intent.getParcelableExtra<NewsModel>(DATA_NEWS)
+    private fun setDatatViewListDetil(){
+        val data=intent.getParcelableExtra<ListModel>(DATA_NEWS_LIST)
         if (data != null) {
             binding.ivDetilNews.setImageResource( data.image?:0)
         }
@@ -25,16 +23,12 @@ class DetilNewsActivity:AppCompatActivity() {
         binding.tvDetilDescriptionNews.text=data?.subtitle
 
     }
-
-    companion object{
-        /**
-         * scooping function
-         * **/
-        const val DATA_NEWS="dataNews"
-        fun navigateToActivityDetil(
-            activity: Activity, dataNews:NewsModel){
-            val inten= Intent(activity,DetilNewsActivity::class.java)
-            inten.putExtra(DATA_NEWS,dataNews)
+    companion object {
+        const val DATA_NEWS_LIST = "dataNewsList"
+        fun navigateToActivityListDetil(
+            activity: Activity, dataNewsList: ListModel) {
+            val inten = Intent(activity, DetilNewsActivity::class.java)
+            inten.putExtra(DATA_NEWS_LIST, dataNewsList)
             activity.startActivity(inten)
         }
     }

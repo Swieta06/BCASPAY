@@ -4,6 +4,7 @@ import android.accounts.AccountManager.KEY_PASSWORD
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bcaspay.databinding.ActivityBiodataBinding
+import com.example.bcaspay.view.login.LoginActivity
 import com.example.bcaspay.view.login.LoginActivity.Companion.KEY_EMAIL
 
 class BiodataActivity:AppCompatActivity() {

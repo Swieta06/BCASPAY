@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.bcaspay.databinding.ActivityLoginBinding
 import com.example.bcaspay.view.register.RegisterActivity
 import com.example.bcaspay.view.biodata.BiodataActivity
+import com.example.bcaspay.view.home.HomeMainActivity
 
 class LoginActivity:AppCompatActivity() {
     private lateinit var binding:ActivityLoginBinding
@@ -28,7 +29,8 @@ class LoginActivity:AppCompatActivity() {
             val password=binding.inputPassword.text.toString()
             if (email==emailUser){
                 if(password==passwordUser){
-                    navigationScreenWithInput(BiodataActivity::class.java,email,password)
+                    navigationScreenWithInput2(HomeMainActivity::class.java,email)
+                   // navigationScreenWithInput(BiodataActivity::class.java,email,password)
                     Toast.makeText(applicationContext, "Login Success", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(applicationContext, "Login Failed", Toast.LENGTH_SHORT).show()
@@ -42,7 +44,12 @@ class LoginActivity:AppCompatActivity() {
 
     }
 
+    private fun navigationScreenWithInput2(screen: Class<*>, inputEmail:String){
+        val intent=Intent(applicationContext,screen)
+        intent.putExtra(KEY_EMAIL,inputEmail)
+        startActivity(intent)
 
+    }
     private fun navigationScreenWithInput(screen: Class<*>, inputEmail:String, inputPassword:String){
         val intent=Intent(applicationContext,screen)
         intent.putExtra(KEY_EMAIL,inputEmail)
