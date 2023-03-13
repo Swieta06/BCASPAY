@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ellipsize="end"
-                android:maxLines="5"
+                android:maxLines="3"
                 android:text="Lorem lorem lorem lorem lorem lorem Lorem lorem lorem lorem lorem lorem  Lorem lorem lorem lorem lorem lorem  Lorem lorem lorem lorem lorem lorem  Lorem lorem lorem lorem lorem lorem  Lorem lorem lorem lorem lorem lorem  Lorem lorem lorem lorem lorem lorem  lorem Lorem lorem lorem lorem lorem lorem lorem Lorem lorem lorem lorem lorem lorem lorem"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
