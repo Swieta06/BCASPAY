@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="Wellcome To Hallo Bca Syariah"
+        android:text="Welcome To Hallo Bca Syariah"
         android:textColor="@color/secondary"
         android:textSize="23sp"
         android:textStyle="bold"

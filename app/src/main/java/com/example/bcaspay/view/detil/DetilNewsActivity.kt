@@ -15,6 +15,7 @@ class DetilNewsActivity:AppCompatActivity() {
         binding= ActivityDetilNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setDatatViewDetil()
+        binding.componenAppBar.tvLogout.visibility= View.GONE
         binding.componenAppBar.ivBack.setOnClickListener{
             this.onBackPressed()
         }
