@@ -46,6 +46,9 @@ class HomeMainActivity : AppCompatActivity() {
         binding.componenAppBar.tvAppbar.text="Hi! $name"
 //        binding.rvNews2.adapter=mainAdapter
 //        binding.rvNews3.adapter=mainAdapter
+        binding.componenAppBar.ivBack.setOnClickListener{
+            this.onBackPressed()
+        }
     }
     private fun navigationScreenWithInput(screen: Class<*>, inputEmail:String, inputPassword:String){
         val intent=Intent(applicationContext,screen)

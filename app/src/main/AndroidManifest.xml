@@ -6,13 +6,13 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/customer_service"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.BCASPAY"
         tools:targetApi="31">
         <activity
-            android:name=".view.login.LoginActivity"
+            android:name=".splashScreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,8 @@
         <activity android:name=".view.register.RegisterActivity"/>
         <activity android:name=".view.biodata.BiodataActivity"/>
         <activity android:name=".view.detil.DetilNewsActivity"/>
-
+        <activity android:name=".view.detil.DetilNewsListActivity"/>
+        <activity android:name=".view.login.LoginActivity"/>
     </application>
 
 </manifest>

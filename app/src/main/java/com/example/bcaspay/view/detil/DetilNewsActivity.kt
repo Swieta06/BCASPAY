@@ -3,6 +3,7 @@ package com.example.bcaspay.view.detil
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bcaspay.databinding.ActivityDetilNewsBinding
 import com.example.bcaspay.model.NewsModel
@@ -14,6 +15,9 @@ class DetilNewsActivity:AppCompatActivity() {
         binding= ActivityDetilNewsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setDatatViewDetil()
+        binding.componenAppBar.ivBack.setOnClickListener{
+            this.onBackPressed()
+        }
 
     }
     private fun setDatatViewDetil(){
@@ -23,6 +27,8 @@ class DetilNewsActivity:AppCompatActivity() {
         }
         binding.tvDetilTitleNews.text=data?.title
         binding.tvDetilDescriptionNews.text=data?.subtitle
+        binding.componenAppBar.tvAppbar.text=data?.title
+        binding.componenAppBar.ivProfile.visibility= View.GONE
 
     }
 
