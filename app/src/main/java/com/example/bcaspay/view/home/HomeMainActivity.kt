@@ -2,11 +2,15 @@ package com.example.bcaspay.view.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bcaspay.R
+import com.example.bcaspay.base.BaseDialog
 import com.example.bcaspay.databinding.ActivityHomeBinding
 import com.example.bcaspay.model.ListModel
 import com.example.bcaspay.model.NewsModel
+import com.example.bcaspay.splashScreen.SplashScreenActivity
 import com.example.bcaspay.view.biodata.BiodataActivity
 import com.example.bcaspay.view.detil.DetilNewsActivity
 import com.example.bcaspay.view.detil.DetilNewsListActivity
@@ -44,11 +48,14 @@ class HomeMainActivity : AppCompatActivity() {
         }
 
         binding.componenAppBar.tvAppbar.text = "Hi! $name"
+        binding.componenAppBar.ivBack.visibility= View.GONE
 //        binding.rvNews2.adapter=mainAdapter
 //        binding.rvNews3.adapter=mainAdapter
-        binding.componenAppBar.ivBack.setOnClickListener {
-            this.onBackPressed()
-        }
+//        binding.componenAppBar.ivBack.setOnClickListener {
+//            this.onBackPressed()
+//        }
+        logout()
+
     }
 
     private fun navigationScreenWithInput(
@@ -227,4 +234,23 @@ class HomeMainActivity : AppCompatActivity() {
         return listData
 
     }
+    private fun logout() {
+        binding.componenAppBar.tvLogout.setOnClickListener {
+            val dialog = BaseDialog(
+                this,
+                "Warning !",
+                "Are you sure want to logout?",
+                onClicked = {
+                    val intent = Intent(applicationContext, SplashScreenActivity::class.java)
+                    startActivity(intent)
+                    Toast.makeText(applicationContext, "Success Logout ", Toast.LENGTH_LONG).show()
+                    //finish()
+                }, withImage = false,
+                image = R.drawable.ic_launcher_background
+            )
+            dialog.setCancelable(false)
+            dialog.show()
+        }
+    }
+
 }

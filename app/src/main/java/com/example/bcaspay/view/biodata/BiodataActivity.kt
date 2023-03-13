@@ -24,6 +24,7 @@ class BiodataActivity:AppCompatActivity() {
         binding.txtProfileName.text=name
         binding.txtPassword.text=password
         binding.componenAppBar.tvAppbar.text="Profile"
+        binding.componenAppBar.tvLogout.visibility= View.GONE
         binding.componenAppBar.ivProfile.visibility= View.GONE
         binding.componenAppBar.ivBack.setOnClickListener{
             this.onBackPressed()
